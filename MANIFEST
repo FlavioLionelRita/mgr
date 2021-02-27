@@ -3,3 +3,4 @@ setup.cfg
 setup.py
 mgr/__init__.py
 mgr/core.py
+mgr/process.py
