@@ -103,9 +103,24 @@ class Manager():
         else:
             return  Helper.rreplace(value.__name__,self.type , '')  
 
+class IconProvider():
+    def __init__(self,iconsPath=None): 
+        self.icons = {}
+        if iconsPath is not None:
+           self.loadIcons(iconsPath)
+
+    def loadIcons(self,iconsPath):
+        pass
+
+    def getIcon(self,key):
+        key = key.replace('.','')
+        if key not in self.icons: key = '_blank'
+        return self.icons[key.replace('.','')] 
+
 class MainManager(Manager,metaclass=Singleton):
     def __init__(self):
         super(MainManager,self).__init__(self)
+        self.iconProvider = None
         self.init()
 
     def init(self):
@@ -174,7 +189,13 @@ class MainManager(Manager,metaclass=Singleton):
             if element_name.endswith(_key) and element_name != _key:
                 element = getattr(module, element_name)
                 if inspect.isclass(element):
-                    self[_key].add(element) 
+                    self[_key].add(element)
+
+    def addIconProvider(self,iconProvider:IconProvider):
+        self.iconProvider =iconProvider                     
+
+    def getIcon(self,key):
+       return self.iconProvider.getIcon(key) if self.iconProvider != None else None
 
 class ConfigManager(Manager):
     def __init__(self,mgr):

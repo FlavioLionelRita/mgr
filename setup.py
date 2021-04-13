@@ -7,12 +7,12 @@ with open('README.md') as f:
 setup(
   name = 'py-mgr',
   packages = ['py_mgr'],
-  version = '0.0.9',
+  version = '0.0.10',
   description = 'administration of modules and plugin',
   long_description=long_description,
   long_description_content_type='text/markdown',  # This is important!
   url = 'https://github.com/FlavioLionelRita/py-mgr', # use the URL to the github repo
-  download_url = 'https://github.com/FlavioLionelRita/py-mgr/tarball/0.0.9',
+  download_url = 'https://github.com/FlavioLionelRita/py-mgr/tarball/0.0.10',
   keywords = ['manager', 'plugin'],
   classifiers = [],
   author = 'Flavio Lionel Rita',
