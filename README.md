@@ -1,2 +1,2 @@
 # mgr
-manager for python project
+admin managers and configuration on python projects
