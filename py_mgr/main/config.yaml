@@ -47,30 +47,30 @@ Type:
     struct:
       val: long[4]
     ctl: scalar    
-  Point:
+  point:
     struct:
       x: int
       y: int
     ctl: Point
-  Coordinate:
+  coordinate:
     struct:
       x: int
       y: int
       z: int
     ctl: Coordinate     
-  Size:
+  size:
     struct:
       width: int
       height: int
     ctl: Size    
-  Rectangle:
+  rectangle:
     struct:
       x: int
       y: int
       width: int
       height: int
     ctl: Rectangle
-  Rgb:
+  rgb:
     struct:
       r: byte
       g: byte
@@ -87,7 +87,7 @@ Type:
     re: (.+?)(\.[^.]*$|$)
   folderpath:
     base: string
-    ctl: folderpath
+    ctl: Folderpath
     re: \\(\\\w+)*\\  
   email:
     base: string
